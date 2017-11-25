@@ -34,7 +34,7 @@ REST.prototype.configureExpress = function (connection) {
     var self=this;
     app.use(bodyparser.urlencoded({extended:true}));
     app.use(bodyparser.json());
-    var router =expres.Router();
+    var router =express.Router();
     app.use('/api',router);
     var rest_router=new  rest(router,connection,md5);
     self.startServer();
@@ -51,3 +51,4 @@ REST.prototype.configureExpress = function (connection) {
      console.log("Issue with mysql :"+err);
      process.exit(1);
    };
+new REST();
